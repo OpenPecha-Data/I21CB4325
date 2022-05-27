@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Bibliotheca Polyglotta</title>
+<link rel='stylesheet' type='text/css' href='css/bp.css'>
+<link rel='stylesheet' type='text/css' href='css/diac_doc.css'>
+
+<link rel='stylesheet' type='text/css' href='css/imageGallery.css'>
+<link rel='stylesheet' type='text/css' href='css/ss.css'>
+	      <link rel='stylesheet' type='text/css' href='css/tree_menu.css'>
+<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+<!--  <script type="text/javascript" src="js/jqModal.js"></script>-->
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/tree_menu.js"></script>
+<!-- <script src="js/analytics_tracking.js" type="text/javascript"></script> -->
+
+
+<!-- <script type="text/javascript" src="js/popupDivhandling.js"></script> -->
+<!--  <script type="text/javascript" src="jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquery-imagegallery.js"></script>-->
+</head>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//vrtx.uio.no/js/analytics/v2/analytics.js','ga');
+
+ga('create', 'UA-86407471-1', 'auto');
+ga(function(tracker) {
+
+	// Modifies sendHitTask to hit ipproxy instead of http://www.google-analytics.com directly
+	tracker.set('sendHitTask', function(model) {
+		payload = model.get('hitPayload');
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', '//w3prod-ipproxy.uio.no/collect' +'?' + payload, true);
+		xhr.send();
+	});
+		ga('send', 'pageview');
+});
+</script>
+<body><div class='banner'></div><!-- banner --><div class='uiologo'>
+<a href='http://www.hf.uio.no/'><img src='https://www2.hf.uio.no/polyglotta/hfe.png' border='0'></a></div><!-- uiologo --><div class='clear'></div>
+<div class='smule_tittel'>
+<div class='brodsmuleboks'>You are here: <a href='/polyglotta/index.php' accesskey='1'> BP HOME</a> >  <a href='/polyglotta/index.php?page=library&amp;bid=2' accesskey='1'>TLB</a> > <a href='/polyglotta/index.php
+	?page=volume&amp;vid=843' accesskey='1'>TYKYN</a> > fulltext</div><div class='clear'></div>
+<div class='headline'>TYKYN<div class='clear'></div></div><!-- headline -->
+</div><!-- smule_tittel -->
+<!--<div>-->
+
+<h2 class="trigger" id="tr_lang"><a  href="#">Choose languages</a></h2>
+<h2 class="trigger" id="tr_img"><a  href="#">Choose images, etc.</a></h2>
+
+
+<div id="toggle_container_lan">
+
+<form  id="tr"  name="Sprakvalg2" action="inc/set_cookie_lan.php" method="POST">
+
+<div style="float:left; width:auto; text-align:left; margin-left:20px;">
+<h5>Choose languages</h5>
+<ul>
+<input value="Choose all" type="button" onClick="markAll('tr')"><input value="Uncheck all" type="button" onClick="markNone('tr')">
+
+	<li class="tip" title="Checkbox :: Enable text"><label class="f1_checkbox"><input type="checkbox" name="spraak_valg_ct_843[4479]" value="4479" id="lancheckbox" checked >Uighur: Uigh: Pelliot Chinois 3509, Translitt. (in Hamilton 1971)</label></li><li class="tip" title="Checkbox :: Enable text"><label class="f1_checkbox"><input type="checkbox" name="spraak_valg_ct_843[4478]" value="4478" id="lancheckbox" checked >Uighur: Uigh: Pelliot Chinois 3509, normalised (in Hamilton 1971)</label></li><li class="tip" title="Checkbox :: Enable text"><label class="f1_checkbox"><input type="checkbox" name="spraak_valg_ct_843[4481]" value="4481" id="lancheckbox" checked >Chinese: Chi: Anonymous, 後漢, Han dynasty, ca. 200 A.D., T. 156</label></li><li class="tip" title="Checkbox :: Enable text"><label class="f1_checkbox"><input type="checkbox" name="spraak_valg_ct_843[4480]" value="4480" id="lancheckbox" checked >French: Fre: Hamilton (1971)</label></li><div style="clear:both"></div>
+<input type='submit' name='set_cookie' value='Save view'>
+<div style="clear:both"></div>
+
+</ul>
+<input type="hidden" name="vid" value="843">
+<input type="hidden" name="page" value="fulltext">
+</form>
+</div>
+</div>
+
+<div id="toggle_container_img">
+<form  id="tr"  name="Sprakvalg2" action="inc/set_cookie_img.php" method="POST">
+
+<div style="float:left; width:auto; text-align: left;">
+<h5>Choose display</h5>
+<ul>
+		
+	<li> 
+		<input type='checkbox' name='bilder' checked="checked" > Enable images
+	</li>
+	<li> 
+	<input type='checkbox' onclick="onOffCheckbox();" name='fotnoter' checked="checked"> Enable footnotes
+	<div id="pff" style="display:block" >
+	<ul>
+	<li><input type='radio' name='fotnote_valg'  value='show_a' checked> Show all footnotes</li>
+	<li><input type='radio' name='fotnote_valg'  value='show_h'  > Minimize footnotes</li>
+	</ul>
+	</li>
+	
+	</div>
+	<div style="float:left; width:20em; text-align: left; margin-left:120px ">
+	<div style="clear:both"></div>
+	<input type='submit' name='set_cookie' value='Save view'>
+	<div style="clear:both"></div>
+	</div>
+	
+</ul>
+<input type="hidden" name="vid" value="843">
+<input type="hidden" name="page" value="fulltext">
+</form>
+</div>
+	
+
+
+
+</div>
+</div>
+
+<div class='sok'><form name='Sok' id='FormBlock' action='/polyglotta/index.php' method='get'>
+<input type='hidden' name='page' value='search'>
+<input type='hidden' name='bid' value='2'>
+<input type='hidden' name='vid' value='843'>
+<div class='sokeboks'>
+<input name='sokefelt' id='sokeboks' type='text' size='30' value=''>
+<input type='submit' name='Sok' value='Search' id='nsubmit'>
+<div class='clear'></div><a class="diacbutton" id="diacbutton" href="#">Diacritica</a><a id="diac2button" class="diac2button"  href="#">Diacritica-help</a><a class="s2button" href="https://wiki.uio.no/hf/dmlf/index.php/Kategori:Polyglotta:Documentation:SearchHelp">Search-help</a><div class='diacritical' id='diacritical_sign'><div style="text-align: left; ">
+<table class = 'diacritica' width="200" border="1" cellpadding="1" cellspacing="1" id="diacritical">
+    <tbody>
+        <tr>
+            <td style="text-align: center; ">ā</td>
+            <td style="text-align: center; ">ī</td>
+            <td style="text-align: center; ">ū</td>
+            <td style="text-align: center; ">ṛ</td>
+            <td style="text-align: center; ">ṝ</td>
+            <td style="text-align: center; ">ḷ</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; ">ḹ</td>
+            <td style="text-align: center; ">&rsquo;</td>
+            <td style="text-align: center; ">ṃ</td>
+            <td style="text-align: center; ">ḥ</td>
+            <td style="text-align: center; ">ṅ</td>
+            <td style="text-align: center; ">&ntilde;</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; ">ṭ</td>
+            <td style="text-align: center; ">ḍ</td>
+            <td style="text-align: center; ">ṇ</td>
+            <td style="text-align: center; ">ṣ</td>
+            <td style="text-align: center; ">ś</td>
+            <td style="text-align: center; ">ź</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; ">&scaron;</td>
+            <td style="text-align: center; ">č</td>
+            <td style="text-align: center; ">ǰ</td>
+            <td style="text-align: center; ">&gamma;</td>
+            <td style="text-align: center; ">&nbsp;</td>
+            <td style="text-align: center; ">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+</div></div><!-- diacritical --><div id="ex3a" class="jqmDialog"><div>
+	<span style="font-size:12px;">Note on the transliteration:</span></div>
+<div>
+	<span style="font-size:12px;">The transliteration system of the BP/TLB is based on the Unicode/UTF-8 system. However, there may be difficulties with some of the letters &ndash; particularly on PC/Windows-based systems, but not so much on the Mac. We have chosen the most accepted older and traditional systems of transliteration against, e.g, Wylie for Tibetan, since with Unicode it is possible, in Sanskrit and Tibetan, etc., to represent one sound with one letter in almost all the cases (excepting Sanskrit and Tibetan aspirated letters, and Tibetan tsa, tsha, dza). We thus do not use the Wylie system which widely employs two letters for one sound (ng, ny, sh, zh etc.).</span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:12px;">Important:</span></div>
+<div>
+	<span style="font-size:12px;">We ask you in particular to note the use of the &rsquo; apostrophe and not the &#39; representing the avagrāha in Sanskrit, and most important the &rsquo;a-chuṅ in Tibetan. On the Mac the &rsquo; is Alt-M.</span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:12px;">If you cannot find the letters on your key-board, you may click on the link &quot;Diacritica&quot; to access it for your search.</span></div>
+</div><!-- diacritical_doc --><div class='clear'></div><select name='searchmode'><option selected value='phrase'>Search for exact phrase</option>
+<option  value='phraseregex'>Search for exact phrase (regex)</option>
+<option  value='word'>Search for every word in one record</option>
+<option  value='free'>Search for every word fragment in one record</option>
+</select>
+<select name='context'>
+<option ($_GET[context]=="a" ? "selected" : "") value="a"> Search in all libraries</option><option selected value="bTLB">Search in TLB</option><option selected value="v843">Search in TYKYN</option></select><div class='clear'></div><a class='sbutton' href='/polyglotta/index.php?page=asearch&amp;bid=2&amp;vid=843'>Choose specific texts..</a><div class='clear'></div></div></form></div><!-- sok --><div class='clear'></div><!-- clear --><div id='dcr' class='divControlRead'><div class='venstrefulltekstfelt'><div class='bverknavn'><a href='/polyglotta/index.php?page=volume&amp;vid=843'>TYKYN</a></div><table class="tlvl2">
+					<tr>
+						<td bgcolor="#ffffff"> &nbsp; &nbsp;
+						<img src="./application/class/images/expanded.gif" alt="Click to Expand/Collapse Option" title="Click to Expand/Collapse Option" id="expand_7627.Verses41-58" border=0 hspace=2>
+						<a href="/polyglotta/index.php?page=fulltext&amp;view=fulltext&amp;vid=843" class="ajax_tree0">Complete text</a>
+						</td>
+					</tr>
+				  </table><input type="hidden" name="tree_top_options" id="tree_top_options" value=".|">
+<table class="tlvl2"><tr><td bgcolor="#ffffff">
+<img src="./application/class/images/expanded.gif" alt="Click to Expand/Collapse Option" title="Click to Expand/Collapse Option" id="expand_." border=0 hspace=2><a id="href_." href="/polyglotta/index.php?page=fulltext&view=fulltext&vid=843&mid=&level=&cid=" class="ajax_tree0">
+</td></tr></table>
+<script language=javascript>test('.|')</script><div class='bverknavn'><a href='/polyglotta/index.php?page=library&amp;bid=2'>Back to library</a></div></div><!-- venstrefulltekstfelt --><div class="clear"></div><!-- clear --><div id="nav-menu"><ul>
+  		  <li  id="nav-1"><a class="tabValgt" href="/polyglotta/index.php?page=record&amp;view=record&amp;vid=843&amp;mid=1481996">Sentence by sentence view</a></li>
+  		  <li  id="nav-2"><a  href="/polyglotta/index.php?page=fulltext&amp;view=fulltext&amp;vid=843&amp;cid=&amp;mid=1481996">Continuous text view</a></li>
+ 		<li  id="nav-3"><a  href="/polyglotta/admin/index.php?page=fulltext&amp;view=fulltext&amp;vid=843&amp;cid=&amp;mid=1481996">View in admin</a></li>
+
+  		  </ul></div><div class='clear'></div><!-- clear -->			<script language="javascript" type="text/javascript">
+			var kilderef = '';
+			var tekstid = 0;
+			var tekstid_bilder = 0;
+			var filsti = '';
+			var thumbnail = '';
+			</script>
+		<div class='infofulltekstfelt'><div class='BolkContainer'><div class='textvar' style='width:24%;'><div class='Uighur'><span id='6109928bi' class='paragraph'>
+							TYKYN&nbsp;</span></div></div><div class='textvar' style='width:24%;'><div class='Uighur'><span id='6109903bi' class='paragraph'>
+							<Ädgü ögli tegin ... Ayıɣ ögli tegin>&nbsp;</span></div></div><div class='textvar' style='width:24%;'><div class='Chinese'><span id='6109978bi' class='paragraph'>
+							大方便佛報恩經&nbsp;</span></div></div><div class='textvar' style='width:24%;'><div class='French'><span id='6109953bi' class='paragraph'>
+							Le conte bouddhique du bon et du mauvais prince en version ouïgoure&nbsp;</span></div></div><div class='clear'></div></div><div class='clear'></div><div class='BolkContainer'><div class='textvar' style='width:24%;'><div class='Uighur'><span id='6109929bi' class='paragraph'>
+							(I,1) T’ŠX’RW ’YLYNCWK’ ’’TL’NTWRDY (2) ’RTY ..&nbsp;</span><span id='6109930bi' class='paragraph'>
+						 P’LYX T’ŠTYN T’RYXCY L’R’X (3) KWYRWR ’RTY&nbsp;</span><span id='6109931bi' class='paragraph'>
+						 QWRWX YYRYK SWβ’YW (4) ’WYL YYRYK T’RYYW&nbsp;</span><span id='6109932bi' class='paragraph'>
+						 XWŠ QWZXWN (5) SWQ’R YWRYYWR S’NSYZ TWYM’N (6) ’WYẒLWK ’WYLWRWR ...&nbsp;</span><span id='6109934bi' class='paragraph'>
+						 T’RYX T’RYYW (7) ’M’RY TYNLX L’RYX XWŠCY K’YYKC (8) P’LYXCY ’’βCY TWR(=Z) CY TWZ’XCY (II,1) PWLWP ’’YYLYNL XYLWR .. TYN (2) LYX L’R’X ’WYLWRWR&nbsp;</span><span id='6109935bi' class='paragraph'>
+						 ’M’RY TYNLX (3) L’R CXRY ’NKYR’R YWNK ’NKYR’R (4) KYNTYR ’NKYR’R ..&nbsp;</span><span id='6109936bi' class='paragraph'>
+						 PWZ PRT’TP Q’RS (5) TWQYWR&nbsp;</span><span id='6109937bi' class='paragraph'>
+						 T’QY YM’ ’’DRWQ ’WẒL’R (6) KNTW KNTW ’WẒ ’YŠYN ’YŠL’YWR (7)&nbsp;</span><span id='6109938bi' class='paragraph'>
+						 //DRWX ’’DRWQ ’MK’K ’MK’ ’MK’NWR (8)&nbsp;</span><span id='6109939bi' class='paragraph'>
+						 ///Y YM’ KWYRDY ’M’RY TYNLX L’R .. (III,1) YẈṆT ’WD CWX’R&nbsp;</span><span id='6109940bi' class='paragraph'>
+						 XWY (2) L’XẒYN ’WLTY TYNLYX L’RYX (3) ’WYLWRWR&nbsp;</span><span id='6109941bi' class='paragraph'>
+						 T’RYSYN SWR(=Y?)’R (4)&nbsp;</span><span id='6109942bi' class='paragraph'>
+						 X’N ’WYKWẒ ’’XYT’R&nbsp;</span><span id='6109943bi' class='paragraph'>
+						 ’’TYN X’NYN (5) S’T’R&nbsp;</span><span id='6109944bi' class='paragraph'>
+						 ’’NYN ’WYẒ ’YKYDWR&nbsp;</span><span id='6109945bi' class='paragraph'>
+						 YM’ (6) PWDYSβT TYKYN PW ’WLWŠ (7) PWDWN ’’YX XYLYNCLX(=’R?) XYLMYŠYN (8) KWRWP&nbsp;</span><span id='6109946bi' class='paragraph'>
+						 ’RTWNKW PWŠWŠ LWX X’DX<i>W</i> L<i>X</i> (IV,1) PWLWP&nbsp;</span><span id='6109947bi' class='paragraph'>
+						 ’YXL’YW P’LYX X’ KYRDY .. (2)&nbsp;</span><span id='6109948bi' class='paragraph'>
+						 ’WL ’WYDWN MX’RYT ’YL’K ’DKW (3) ’WYKLY TYKYNYK PWŠWŠ LWX KWRWP (4)&nbsp;</span><span id='6109949bi' class='paragraph'>
+						 ’YNC’ TYP Y’RLYX X’DY ’’MR’X (5)&nbsp;</span><span id='6109950bi' class='paragraph'>
+						 ’WXLWM N’ ’WYCWN PWŠWŠ LWX (6) K’LTYNKYZ&nbsp;</span><span id='6109951bi' class='paragraph'>
+						 TYKYN X’NKY Q’NQ’ (7) ’YNC’ TYP ’WYTWNTY ’YXL’YW&nbsp;</span><span id='6109952bi' class='paragraph'>
+						 PW (8) N’ ’<i>M</i>K’K LYK YYR ’RMYŠ N’KLWK (V,1) TWXDWM MN&nbsp;</span></div></div><div class='textvar' style='width:24%;'><div class='Uighur'><span id='6109904bi' class='paragraph'>
+							(I,1) tašɣaru ilinčükä atlanturdı (2) erti ..&nbsp;</span><span id='6109905bi' class='paragraph'>
+						 balıq taštın tarıɣčı-laraɣ (3) körür erti&nbsp;</span><span id='6109906bi' class='paragraph'>
+						 quruɣ yerig suβayu (4) öl yerig tarıyu&nbsp;</span><span id='6109907bi' class='paragraph'>
+						 quš quzɣun (5) suqar yorıyur sansız tümän (6) özlüg olürür ...&nbsp;</span><span id='6109909bi' class='paragraph'>
+						 tarıɣ tarıyu (7) ämäri tınlıɣ-larıɣ quščı keyikči (8) balıqčı aβčı tor-čı tuzaqčı (II,1) bulup ayıɣ qılınč qılur ... tın-(2)lıɣ-laraɣ ölürür&nbsp;</span><span id='6109910bi' class='paragraph'>
+						 ämäri tınlıɣ-(3)lar čıɣarı äŋirär yuŋ äŋirär (4) kentir äŋirär ..&nbsp;</span><span id='6109911bi' class='paragraph'>
+						 böz bertätip qars (5) toqıyur&nbsp;</span><span id='6109912bi' class='paragraph'>
+						 taqı yemä adruq uzlar (6) käntü käntü uz išin išläyür .. (7)&nbsp;</span><span id='6109913bi' class='paragraph'>
+						 adruq adruq ämgäk ämgä ämgänür (8)&nbsp;</span><span id='6109914bi' class='paragraph'>
+						 taqı yemä kördi ämäri tınlıɣ-lar ... (III,1) yunt ud čoqar&nbsp;</span><span id='6109915bi' class='paragraph'>
+						 qoy (2) laɣzın ulatı tınlıɣ-larıɣ (3) ölürür&nbsp;</span><span id='6109916bi' class='paragraph'>
+						 tärisin soy(= r?)ar (4)&nbsp;</span><span id='6109917bi' class='paragraph'>
+						 qan ögüz aqıtar&nbsp;</span><span id='6109918bi' class='paragraph'>
+						 ’ätin qanın (5) satar&nbsp;</span><span id='6109919bi' class='paragraph'>
+						 anın öz egidür ..&nbsp;</span><span id='6109920bi' class='paragraph'>
+						 yemä (6) bodısaβat tegin bu uluš (7) bodun ayıɣ qılınčlıɣ(=lar?) qılmıšın (8) körüp&nbsp;</span><span id='6109921bi' class='paragraph'>
+						 ärtüŋü bušuš-luɣ qadɣ<i>u</i>-luɣ (IV,1) bolup&nbsp;</span><span id='6109922bi' class='paragraph'>
+						 ıɣlayu balıq-qa kirdi .. (2)&nbsp;</span><span id='6109923bi' class='paragraph'>
+						 ol ödün maxarıt elläg ädgü (3) ögli teginig bušuš-luɣ körüp (4)&nbsp;</span><span id='6109924bi' class='paragraph'>
+						 inčä tep yarlıɣ-qadı amraq (5)&nbsp;</span><span id='6109925bi' class='paragraph'>
+						 oɣlum nä ücün bušuš-luɣ (6) kältiŋiz&nbsp;</span><span id='6109926bi' class='paragraph'>
+						 tegin qaŋı qanqa (7) inčä tep ötünti ıɣlayu&nbsp;</span><span id='6109927bi' class='paragraph'>
+						 bu (8) nä ämgäk-lig yer ermiš näglük (V,1) toɣdum men&nbsp;</span></div></div><div class='textvar' style='width:24%;'><div class='Chinese'><span id='6109979bi' class='paragraph'>
+							善友太子導從前後。作倡 (143a10) 伎樂。大衆圍遶。&nbsp;</span><span id='6109980bi' class='paragraph'>
+						 出城觀看。見有耕者。&nbsp;</span><span id='6109981bi' class='paragraph'>
+						 墾(143a11) 土&nbsp;</span><span id='6109982bi' class='paragraph'>
+						 出虫烏隨啄呑。&nbsp;</span><span id='6109984bi' class='paragraph'>
+						 &nbsp;</span><span id='6109985bi' class='paragraph'>
+						 &nbsp;</span><span id='6109986bi' class='paragraph'>
+						 &nbsp;</span><span id='6109987bi' class='paragraph'>
+						 &nbsp;</span><span id='6109988bi' class='paragraph'>
+						 &nbsp;</span><span id='6109989bi' class='paragraph'>
+						 &nbsp;</span><span id='6109990bi' class='paragraph'>
+						 &nbsp;</span><span id='6109991bi' class='paragraph'>
+						 &nbsp;</span><span id='6109992bi' class='paragraph'>
+						 &nbsp;</span><span id='6109993bi' class='paragraph'>
+						 &nbsp;</span><span id='6109994bi' class='paragraph'>
+						 &nbsp;</span><span id='6109995bi' class='paragraph'>
+						 善友太子遙見&nbsp;</span><span id='6109996bi' class='paragraph'>
+						 如是愍而(143a12) 哀傷。&nbsp;</span><span id='6109997bi' class='paragraph'>
+						 生長深宮未見此事。&nbsp;</span><span id='6109998bi' class='paragraph'>
+						 問左右言。&nbsp;</span><span id='6109999bi' class='paragraph'>
+						 &nbsp;</span><span id='6110000bi' class='paragraph'>
+						 &nbsp;</span><span id='6110001bi' class='paragraph'>
+						 &nbsp;</span><span id='6110002bi' class='paragraph'>
+						 此作 (143a13) 何物共相殘害。&nbsp;</span></div></div><div class='textvar' style='width:24%;'><div class='French'><span id='6109954bi' class='paragraph'>
+							(9,1) ... On avait fait monter [le prince] à cheval pour un divertissement au-dehors.&nbsp;</span><span id='6109955bi' class='paragraph'>
+						 A l'extérieur de la ville, il voyait des cultivateurs.&nbsp;</span><span id='6109956bi' class='paragraph'>
+						 Pendant qu'ils arrosent la terre sèche et cultivent la terre humide,&nbsp;</span><span id='6109957bi' class='paragraph'>
+						 des oiseaux (tels que) des corbeaux vont en becquetant et tuent d'innombrables myriades de créatures.&nbsp;</span><span id='6109959bi' class='paragraph'>
+						 Pendant qu'on cultive la terre, trouvant des êtres vivants en nombre illimité, des oiseleurs, des giboyeurs, des pêcheurs, des chasseurs, des oiseleurs aux filets, et des oiseleurs aux lacs commettent de mauvaises actions et tuent des êtres vivants.&nbsp;</span><span id='6109960bi' class='paragraph'>
+						 De très nombreuses gens font tourner le rouet, filent la laine, et filent le chanvre.&nbsp;</span><span id='6109961bi' class='paragraph'>
+						 Ils serrent (la trame de) la toile en la frappant, et trament le tissu de laine.&nbsp;</span><span id='6109962bi' class='paragraph'>
+						 De plus, d'autres artisans exécutent, chacun de son côté, son travail d'artisan.&nbsp;</span><span id='6109963bi' class='paragraph'>
+						 Ils éprouvent des souffrances de toutes sortes.&nbsp;</span><span id='6109964bi' class='paragraph'>
+						 Encore vit-il (que) de très nombreuses (10,1) gens assomment le cheval et le bœuf;&nbsp;</span><span id='6109965bi' class='paragraph'>
+						 tuent le mouton, le porc, et d'autres créatures;&nbsp;</span><span id='6109966bi' class='paragraph'>
+						 les dépouillent de leur peau;&nbsp;</span><span id='6109967bi' class='paragraph'>
+						 font couler un fleuve de sang;&nbsp;</span><span id='6109968bi' class='paragraph'>
+						 vendent leur chair et leur sang;&nbsp;</span><span id='6109969bi' class='paragraph'>
+						 et par là s'entretiennent eux-mêmes.&nbsp;</span><span id='6109970bi' class='paragraph'>
+						 Alors, ayant vu que le peuple de ce pays faisait des actions mauvaises,&nbsp;</span><span id='6109971bi' class='paragraph'>
+						 le prince <i>bodhisattva</i> devint extrêmement triste et soucieux,&nbsp;</span><span id='6109972bi' class='paragraph'>
+						 et entra dans la ville en pleurant.&nbsp;</span><span id='6109973bi' class='paragraph'>
+						 A ce moment, le roi Maxā-rıt (= <i>mahārāja</i>?), ayant vu que le prince Bien Pensant était triste,&nbsp;</span><span id='6109974bi' class='paragraph'>
+						 s'adressa à lui en ces termes :&nbsp;</span><span id='6109975bi' class='paragraph'>
+						 “Mon fils bien-aimé, pour quelle raison êtes-vous revenu triste?”&nbsp;</span><span id='6109976bi' class='paragraph'>
+						 Le prince s'exprima ainsi à son père le khan tout en pleurant :&nbsp;</span><span id='6109977bi' class='paragraph'>
+						 “Ici c'est quelle terre de souffrance! Ô pourquoi suis-je né?”&nbsp;</span></div></div><div class='clear'></div></div><div class='clear'></div><div class='BolkContainer'><div class='textvar' style='width:24%;'><div class=''><span id='bi' class=''>
+							&nbsp;</span>							<script language="javascript" type="text/javascript">
+
+							tekstid = "";
+							kilderef = "  ";
+							$('#'+tekstid).text(kilderef);
+							</script>
+					</div></div><div class='clear'></div><div class='BolkContainer'><div class='textvar' style='width:24%;'></div><div class='textvar' style='width:24%;'></div><div class='textvar' style='width:24%;'></div><div class='textvar' style='width:24%;'></div></div><div class='clear'></div><div class="fontboks"><a onClick=onOffdiv('permlink') name="permlink" href="#permlink">Permanent link</a></div><div class='clear'></div><div class='perm_felt' id='permlink'>http://www2.hf.uio.no/common/apps/permlink/permlink.php?app=polyglotta&amp;context=ctext&amp;uid=0e36fd62-85f2-11e6-98cc-0050569f23b2</div></div></div><!-- infofelt --></div><!-- divControl --><div class="clear"></div>
+<div style="clear:both"></div><div class="signatur"><div class="signatur_left">
+		<a href="https://wiki.uio.no/hf/dmlf/index.php/Kategori:Polyglotta:Documentation">Go to Wiki Documentation</a></br>Enhet: <a HREF=http://www.hf.uio.no>Det humanistiske fakultet</a> &nbsp; Utviklet av: <a href="http://www.hf.uio.no/tjenester/it">IT-seksjonen ved HF</a></div><!--signatur_left -->
+		<div class="signatur_right"><a href="/polyglotta/admin/index.php">Login</a></div>
+		<div style="clear:both"></div></div>
+</body></html><SCRIPT LANGUAGE="JAVASCRIPT">
+	
+	$("#tr_IA").click(function(){
+	    if ($("#toggle_container_IA").is(':hidden'))
+	    	$("#toggle_container_IA").show();
+	    else{
+	        $("#toggle_container_IA").hide();
+	    }
+	    return false;
+		});
+
+	$("#tr_lang").click(function(){
+	    if ($("#toggle_container_lan").is(':hidden'))
+	    	$("#toggle_container_lan").show();
+	    else{
+	        $("#toggle_container_lan").hide();
+	    }
+	    return false;
+	});
+
+	$("#tr_img").click(function(){
+	    if ($("#toggle_container_img").is(':hidden'))
+	    	$("#toggle_container_img").show();
+	    else{
+	        $("#toggle_container_img").hide();
+	    }
+	    return false;
+	});
+
+	$("#diac2button").click(function(){
+	   if ($("#ex3a").is(':hidden')){
+		   $("#ex3a").show();
+	       $("#diac2button").html("Hide&#32Diacritica-help");
+	   }else{
+	       $("#ex3a").hide();
+	       $("#diac2button").html("Diacritica-help");
+	   }
+	   return false;
+	});
+
+	$("#diacbutton").click(function(){
+	   if ($("#diacritical_sign").is(':hidden')){
+		   	$("#diacritical_sign").show();
+	      	$("#diacbutton").html("Hide&#32diacritica");
+	   }else{
+	        $("#diacritical_sign").hide();
+	        $("#diacbutton").html("Diacritica");
+	   }
+	   return false;
+    });
+
+	$('#toggle_container_IA').click(function(e) {
+	   e.stopPropagation();
+	});
+
+	$('#toggle_container_lan').click(function(e) {
+        e.stopPropagation();
+    });
+
+	$('#toggle_container_img').click(function(e) {
+        e.stopPropagation();
+    });
+
+	$('#ex3a').click(function(e) {
+	    e.stopPropagation();
+	});
+
+	$('#diacritical_sign').click(function(e) {
+        e.stopPropagation();
+    });
+
+	//Kode for å sette inn diakritiske tegn
+	$('#diacritical > tbody > tr > td').click(function() {
+	  	//alert('red');
+		$("#sokeboks").val($("#sokeboks").val() + $(this).text());
+	});
+
+	$('.diac2button').text(($('.diacbutton').text() == 'Diacritica-help') ? 'Hide Diacritica-help' : 'Diacritica-help');
+	
+	//Lukker alle åpnede pop'uper ved klikk på siden
+	$(document).click(function() {
+		$('#toggle_container_IA').hide();
+	    
+        $('#toggle_container_lan').hide();
+    
+        $('#toggle_container_img').hide();
+   
+   		$('#diacritical_sign').hide();
+   		$("#diacbutton").html("Diacritica");
+   
+       	$('#ex3a').hide();
+       	$("#diac2button").html("Diacritica-help");
+   });
+	</SCRIPT>
